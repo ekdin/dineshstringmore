@@ -1,0 +1,40 @@
+<% RatingCategory.all.each do |rateCate|  %>
+<% index=1 %>
+    <div id="rate" class="div-rate-main">
+                 <input type="hidden" id="sid" value="<%=story.id %>">
+                 <input type="hidden" id="rcid" value="<%= rateCate.id  %>"> 
+
+                 <span class="span-rate"><%= rateCate.name %> </span>
+                 
+                 <div style="display: inline;">
+                   <% if user_signed_in? %>
+                       <% if story.storyratings.where(:rate_category_id=>rateCate.id).length>0 %>
+                        <% ratecount= story.storyratings.find_by(:rate_category_id=>rateCate.id).rate %>
+                            <% unratecount=5-ratecount.to_i  %>  
+                            
+                            <% ratecount.times do %>
+                              <i class="glyphicon story-star glyphicon-star rate-active" value='<%=index %>'></i>
+                              <% index=index+1 %>
+                            <% end %> 
+                            <% unratecount.times do %>
+                              <i class="glyphicon story-star glyphicon-star-empty" value='<%=index %>'></i>
+                              <% index=index+1 %>
+                            <% end %>
+
+                             <% else %>
+                           <% 5.times do %>
+                              <i class="glyphicon story-star glyphicon-star-empty" value='<%=index %>'></i>
+                              <% index=index+1 %>
+                            <% end %> 
+                          <% end %>   
+                  <% else %>
+                        <% 5.times do %>
+                              <i class="glyphicon story-star glyphicon-star-empty" value='<%=index %>'></i>
+                              <% index=index+1 %>
+                            <% end %> 
+                                                
+                   <% end %>
+                  </div> 
+                  
+  </div>
+<% end %>

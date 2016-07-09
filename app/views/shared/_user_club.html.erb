@@ -1,0 +1,18 @@
+ <%= @clubsfeed[:userclubfeed].each do |club| %>
+
+  <div class="col-md-6 col-sm-6">
+                <div id="main" class="div-main-club-pin">
+                    <div id="club-image" class="div-club-image">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2" id="col-club-iamge-holder"><img class="img-circle club-image-style" src="<%= club.club_pic.url %>" width="100%" id="club-image-style"></div>
+                        </div>
+                    </div>
+                    <div id="club-name" class="div-club-name">
+                        <h2 class="text-center club-name-style" id="club-name-style"><strong><%= club.name %></strong></h2>
+                        <h4 class="text-center club-ineterest-name-style">#<%=club.interest.title  %></h4></div>
+                </div>
+                 <%= render partial: "shared/club_pin_join", locals: { club: club } %>
+                
+</div>
+
+<% end %>

@@ -1,0 +1,96 @@
+div#main.div-main-user-pin{
+  height:118px;
+  border:1px solid grey;
+  border-radius:5px;
+  margin-top:3px;
+}
+
+div.col-lg-4.col-md-4.col-sm-6.col-xs-12.nopaddding{
+  padding-left:2px;
+  padding-right:2px;
+}
+
+div#user-details.div-user-details{
+  padding-left:8px;
+  overflow:hidden;
+  margin-top:11px;
+}
+
+div#user-pic.col-md-12.nopadding{
+  padding-left:2px;
+  padding-right:2px;
+}
+
+div#user-name.col-md-12.col-sm-8.col-xs-8.nopadding{
+  padding-left:0px;
+  padding-right:0px;
+}
+
+img.img-circle.image-user-pic{
+  margin-top:4px;
+}
+
+div.div-user-name{
+}
+
+h4.user-name-style{
+  margin-top:12px;
+  margin-bottom:1px;
+  font-size:16px;
+}
+
+h5.text-left.user-username{
+  margin-top:1px;
+  margin-bottom:1px;
+}
+
+div#first.col-lg-8.col-md-8.col-sm-8.col-xs-8.nopadding{
+  padding-left:1px;
+  padding-right:1px;
+}
+
+div#follow-btn.div-follow-btn{
+}
+
+.btn.btn-default.user-follow-btn{
+  margin-top:20px;
+  margin-left:0px;
+  border-radius:5px;
+  background-color:orange;
+}
+
+div#user-stats.div-user-stats{
+}
+
+div#followers-count.col-md-12.col-sm-4.col-xs-4.nopadding{
+  padding-left:1px;
+  padding-right:1px;
+}
+
+h6{
+}
+
+div#stat-name.div-stat-name{
+}
+
+h6.stat-name-style{
+}
+
+h6.stat-name-style{
+  margin-top:1px;
+  margin-bottom:1px;
+}
+
+h5.text-center.stat-count-style{
+  margin-top:1px;
+  margin-bottom:1px;
+}
+
+div#stat-name.div-stat-name{
+  margin-bottom:1px;
+}
+
+div#stat-count.div-stat-count{
+  margin-top:12px;
+}
+

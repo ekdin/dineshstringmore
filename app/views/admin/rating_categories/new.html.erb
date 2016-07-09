@@ -1,0 +1,10 @@
+<%=form_for :rating_category, url: admin_rating_categories_url, html:{method: :post} do |f| %>
+
+  <div class="form-group">
+    <%= f.label :Rating_Name %><br>
+    <%= f.text_field :name, class:"form-control"  %>
+    </div>
+  <div class="form-group">
+    <%= f.submit "Create", class:"btn btn-default" %>
+    </div>
+<% end %>

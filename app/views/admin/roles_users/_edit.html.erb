@@ -1,0 +1,12 @@
+<% rolesuser=roles_user %>
+
+<%=form_for :roles_user, url: admin_roles_user_url(rolesuser.id), html:{method: :patch}, remote:true  do |f| %>
+
+  <div class="form-group">
+      <%= hidden_field_tag 'roles_user[user_id]', user_id %>
+      <%= select_tag 'roles_user[role_id]', options_for_select(Role.all.collect{ |u| [u[:name], u.id]},rolesuser.id), include_blank: 'Select' %>
+    </div>
+ <div class="form-group">
+    <%= f.submit "Update Role", class:"btn btn-default" %>
+    </div>
+<% end %>

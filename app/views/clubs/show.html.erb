@@ -1,0 +1,117 @@
+ <% @user ||= current_user %>
+ <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 nopadding">
+                <div id="club-page-banner" class="club-page-banner">
+                    <div id="div-club-image-space" class="div-club-image-space">
+                        <div class="col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-3 col-sm-offset-5 col-xs-4 col-xs-offset-4 nopadding" id="col-club-image">
+
+                            <div id="club-image-holder" class="club-image-holder">
+
+                            <%= image_tag @club.club_pic.url, class: 'img-circle img-responsive club-image-club-page', width: '100px', height: '100px'  %>    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="club-name-space"><span class="text-primary club-name-style-club-page"><strong><%= @club.name %></strong></span></div>
+                    <div id="div-club-details" class="div-club-details"></div>
+                    <div id="div-club-bio" class="div-club-bio">
+                        <p class="club-bio-style-club-page"><%= @club.description %></p>
+                    </div>
+                    <div id="join-club-space" class="join-club-space">
+                     <%= render partial: "join", locals: { club: @club } %>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 nopadding">
+                <div class="div-feed-section">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 nopadding" id="club-stats-panel">
+                        <div id="div-club-stats-panel" class="div-club-stats-panel">
+                          <div id="clubfeed" class="div-club-feed">
+                            <%= link_to "/clubs/#{params[:id]}/#{params[:name]}/get_club_page?&page=1", rel: 'next', remote: true do %>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 nopadding" id="col-heading">
+                                    <div id="stat-name" class="div-stat-name">
+                                        <h4 class="stat-name-style">Feed </h4></div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 nopadding" id="col-heading-numbers">
+                                    <h4 id="number" class="div-number"><%=@club.clubquestions.count+@club.stories.count  %></h4></div>
+                               <% end %>     
+                            </div>    
+
+                            <div id="questions" class="div-club-questions">
+                            <%= link_to "/club_question/#{params[:id]}/getclubquestions?&page=1", rel: 'next', remote: true do %>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 nopadding" id="col-heading">
+                                    <div id="stat-name" class="div-stat-name">
+                                        <h4 class="stat-name-style">Questions </h4></div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 nopadding" id="col-heading-numbers">
+                                    <h4 id="number" class="div-number"><%=@club.clubquestions.count %></h4></div>
+                               <% end %>     
+                            </div>
+                            <div id="members" class="div-club-members">
+                             <%= link_to "/clubs/#{params[:id]}/#{params[:name]}/getclubmember?&page=1", rel: 'next', remote: true do %>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 nopadding" id="col-heading">
+                                    <div id="stat-name" class="div-stat-name">
+                                        <h4 class="stat-name-style">Members </h4></div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 nopadding" id="col-heading-numbers">
+                                    <h4 id="number" class="div-number"><%=@club.users.count %> </h4></div>
+                                <% end %>    
+                            </div>
+                            <div id="post" class="div-club-posts">
+                             <%= link_to "/club_story/#{params[:id]}/getclubstories?&page=1", rel: 'next', remote: true do %>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 nopadding" id="col-heading">
+                                    <div id="stat-name" class="div-stat-name">
+                                        <h4 class="stat-name-style">Posts </h4></div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 nopadding" id="col-heading-numbers">
+                                    <h4 id="number" class="div-number"><%=@club.stories.count %> </h4></div>
+                              <% end %>      
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-lg-6 col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-0 col-xs-12" id="col-stream">
+                        <div id="div-post-box-club-page" class="div-post-box-club-page">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
+                                <div id="main" class="div-main">
+                                    <div id="tab-change" class="div-tab">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding" id="col-question">
+                                            <div id="div-tab-question" class="div-tab-question">
+                                                <h3 class="text-center tab-text-style">Post a Question</h3></div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding" id="col-post">
+                                            <div id="tab-post" class="div-tab-post">
+                                                <h3 class="text-center tab-text-style">Post a Story</h3></div>
+                                        </div>
+                                    </div>
+                                         <%=render partial: 'post_block' %>
+                                          <%=render partial: 'post_story', :locals=>{:storyclass=>'inactive'} %>
+                                   </div>
+                                </div>
+
+
+                        </div>
+                        <div id="header" class="div-club-feed-header">
+                            <h3 id="club-feed-heading" class="club-feed-heading-style">Club Feed</h3>
+                        </div>
+                        <div class="infinite-club-story">
+                         <%= render partial: 'club_show' %>
+                         
+                       </div>
+                        <div class='view-more infinite-club-page-scrolling'>
+
+                         <%= link_to "/clubs/#{params[:id]}/#{params[:name]}/get_club_page?&page=2", rel: 'next', remote: true do %>
+                             <%= image_tag 'ajax-loader.gif' %><br>
+                            Loading more...
+                         <% end %>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,255 @@
+ <div class="container-fluid conatiner-main">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
+                <div id="div-cover-photo-user-profile-page" class="div-cover-photodiv-cover-photo-user-profile-page"></div>
+            </div>
+        </div>
+        <%=form_for :user, url: "/user_profile/savename/#{@user.id}", html:{method: :patch}, :remote=>true do |f| %>
+
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 nopadding" id="col-user-profile-pic-user-profile-page">
+                <div id="div-user-profile-pic-user-profile-page" class="div-user-profile-pic-user-profile-page">
+                <% if @user.user_profile_pic.present? %>
+                       <img src="<%= @user.user_profile_pic %>" class="user-profile-pic-user-profile-page image-user-profile-pic">
+                  <% else %>
+                    
+                      <img class="user-profile-pic-user-profile-page image-user-profile-pic" src="<%= asset_url('avatar.jpg') %>"   >       
+                       
+                <% end %>
+                  
+                      <% if user_signed_in? %>
+                            
+                             <% if @user.id==current_user.id %>
+                                    <input type="file" class="user-profile-pic" style="display: none;" name="user[user_profile_pic]" id="user_user_profile_pic" ></input>
+                                  
+                             <% end %>
+
+                        <% end %>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-6 col-xs-4 nopadding" id="col-user-name">
+                <div id="div-user-name-user-profile-page" class="div-user-name-user-profile-page">
+                    <h4 id="user-name" class="user-name"><strong>
+                    <% if @user.name.present? %>
+                       <span class="span-user-name"> 
+                            <%= @user.name %>
+                      </span> 
+                      <% else %>  
+                      <span class="span-user-name">
+
+                         User Guest 
+                      </span>
+                        <% end%>
+                         <% if user_signed_in? %>
+                            
+                             <% if @user.id==current_user.id %>
+                                    <input type="text" class="input-user-name" value=" <%= @user.name  %>" name="user[name]" id="user_name" ></input>
+                                  
+                             <% end %>
+
+                        <% end %>
+
+                    
+                    
+                    </strong></h4>
+                    <h5 id="user-username" class="user-username"><strong>@
+                         <span class="span-user-uname" >
+                              <%= @user.uname %>
+
+                         </span>  
+
+                    </strong> </h5></div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-sm-offset-0 col-xs-4 nopadding" id="col-user-actions-user-profile-page">
+                <div id="div-user-actions-user-profile-page" class="div-user-actions-user-profile-page">
+                     <% if user_signed_in? %>
+                             <% if @user.id==current_user.id %>
+
+                                <a href="javascript:void(0);" class="btn btn-default div-user-follow-button-user-profile-page user-profile-edit" onclick="fnusereditclick();" >Edit</a>
+                                <a href="javascript:void(0);" class="btn btn-default div-user-follow-button-user-profile-page user-profile-cancel " onclick="fnusercancelclick();" >Cancel</a>
+                               
+                                <%= f.submit 'save',class: 'btn btn-default div-user-follow-button-user-profile-page user-profile-save ' %>
+                         
+
+                              <% else %>  
+                                <button class="btn btn-default div-user-follow-button-user-profile-page" type="button" id="div-user-follow-button-user-profile-page"><strong>Follow </strong></button>
+                             <% end %>
+                     <% else %>        
+
+                    
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="row user-bio" id="user-bio">
+            <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12 nopadding">
+                <div id="div-user-bio-user-profile-page" class="div-user-bio-user-profile-page">
+                    <p class="text-left text-success user-bio-style">
+                       <span class="span-user-bio"> <%= @user.bio %></span></p>
+                     <% if user_signed_in? %>
+                            
+                             <% if @user.id==current_user.id %>
+                                    <input type="text" class="input-user-bio" value=" <%= @user.bio %>" name="user[bio]" id="user_bio" ></input>
+                                  
+                             <% end %>
+
+                        <% end %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <div class="row" id="user-timeline">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 nopadding" id="user-stats-panel">
+            <div id="div-user-stats-panel" class="div-user-stats-panel">
+          
+                <div id="div-followers" class="div-user-stats-user-profile-page">
+                    <%= link_to "/clubs/#{@user.id}/#{@user.uname}/get_user_club_page?&page=1", rel: 'next', remote: true do %>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 nopadding" id="col-heading">
+                        <div id="stat-name" class="div-stat-name">
+                            <h4 class="stat-name-style">user feed</h4></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 nopadding" id="col-heading-numbers">
+                        <h4 id="number" class="div-number"><%=@user.clubquestions.count+@user.stories.count  %> </h4></div>
+                        <% end %>
+                </div>    
+                
+                <div id="div-followers" class="div-user-stats-user-profile-page">
+               <%= link_to "/users/#{@user.uname}/getfollower?&page=1", rel: 'next', remote: true do %>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 nopadding" id="col-heading">
+                        <div id="stat-name" class="div-stat-name">
+                            <h4 class="stat-name-style">Followers </h4></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 nopadding" id="col-heading-numbers">
+                        <h4 id="number" class="div-number"><%= @user.followers.count %></h4></div>
+                    <% end %>    
+                      
+                </div>
+                <div id="div-followers" class="div-user-stats-user-profile-page">
+                <%= link_to "/users/#{@user.uname}/getfollowing?&page=1", rel: 'next', remote: true do %>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 nopadding" id="col-heading">
+                        <div id="stat-name" class="div-stat-name">
+                            <h4 class="stat-name-style">Following </h4></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 nopadding" id="col-heading-numbers">
+                        <h4 id="number" class="div-number"><%= @user.followings.count %> </h4></div>
+                    <% end %>    
+                </div>
+                <div id="div-followers" class="div-user-stats-user-profile-page">
+                  <%= link_to "/club_question/#{@user.id}/getuserclubquestions?&page=1", rel: 'next', remote: true do %>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 nopadding" id="col-heading">
+                        <div id="stat-name" class="div-stat-name">
+                            <h4 class="stat-name-style">Questions</h4></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 nopadding" id="col-heading-numbers">
+                        <h4 id="number" class="div-number"><%= @user.clubquestions.count %> </h4></div>
+                   <% end %>     
+                </div>
+                <div id="div-followers" class="div-user-stats-user-profile-page">
+                 <%= link_to "/club_story/#{@user.id}/getuserclubstories?&page=1", rel: 'next', remote: true do %>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 nopadding" id="col-heading">
+                        <div id="stat-name" class="div-stat-name">
+                            <h4 class="stat-name-style">Stories </h4></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 nopadding" id="col-heading-numbers">
+                        <h4 id="number" class="div-number"><%= @user.stories.count %> </h4></div>
+
+                    <% end %>    
+                </div>
+                <div id="div-followers" class="div-user-stats-user-profile-page">
+                    <%= link_to "/user_club/#{@user.id}/getuserclubs?&page=1", rel: 'next', remote: true do %>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 nopadding" id="col-heading">
+                        <div id="stat-name" class="div-stat-name">
+                            <h4 class="stat-name-style">Clubs</h4></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 nopadding" id="col-heading-numbers">
+                        <h4 id="number" class="div-number"><%= @user.clubs.count %> </h4></div>
+                     <% end %>   
+                </div>
+            </div>
+        </div>
+         <div class="col-lg-6 col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-0 col-xs-12" id="col-stream">
+                        <div id="div-post-box-club-page" class="div-post-box-club-page">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
+                                <div id="main" class="div-main">
+                                    <div id="tab-change" class="div-tab">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding" id="col-question">
+                                            <div id="div-tab-question" class="div-tab-question">
+                                                <h3 class="text-center tab-text-style">Post a Question</h3></div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding" id="col-post">
+                                            <div id="tab-post" class="div-tab-post">
+                                                <h3 class="text-center tab-text-style">Post a Story</h3></div>
+                                        </div>
+                                    </div>
+                                         <%=render partial: 'shared/post_question' %>
+                                          <%=render partial: 'shared/post_story', :locals=>{:storyclass=>'inactive'} %>
+                                   </div>
+                                </div>
+
+
+                        </div>
+                        <div id="header" class="div-club-feed-header">
+                            <h3 id="club-feed-heading" class="club-feed-heading-style">Club Feed</h3>
+                        </div>
+                        <div class="infinite-club-story">
+                         <%= render partial: 'club_show' %>
+                         
+                       </div>
+                        <div class='view-more infinite-club-page-scrolling'>
+
+                         <%= link_to "/clubs/#{@user.id}/#{@user.uname}/get_user_club_page?&page=2", rel: 'next', remote: true do %>
+                             <%= image_tag 'ajax-loader.gif' %><br>
+                            Loading more...
+                         <% end %>
+                      </div>
+                    </div>
+
+
+
+        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs hidden-sm"></div>
+    </div>
+
+<style type="text/css">
+    .input-user-name,.input-user-bio,.user-profile-cancel,.user-profile-save,.user-profile-pic
+    {
+        display: none ;
+    }
+
+
+</style>
+
+
+<script type="text/javascript">
+    
+    function fnusereditclick()
+    {
+        $('.input-user-name').show();
+        $('.span-user-name').hide();
+        $('.input-user-bio').show();
+        $('.span-user-bio').hide();
+        $('.user-profile-edit').hide();
+        $('.user-profile-cancel').show();
+        $('.user-profile-save').show();
+        $('.image-user-profile-pic').hide();
+        $('.user-profile-pic').show();
+        
+
+    }
+
+    function fnusercancelclick()
+    {
+         $('.input-user-name').hide();
+        $('.span-user-name').show();
+        $('.input-user-bio').hide();
+        $('.span-user-bio').show();
+        $('.user-profile-edit').show();
+        $('.user-profile-cancel').hide();
+        $('.user-profile-save').hide();
+        $('.image-user-profile-pic').show();
+        $('.user-profile-pic').hide();
+        
+    }
+
+
+</script>    

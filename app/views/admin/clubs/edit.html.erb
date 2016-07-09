@@ -1,0 +1,31 @@
+
+<%=form_for :club, url: admin_club_url(params[:id]), html:{method: :patch} do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class:"form-control"  %>
+    </div>
+      <div class="form-group">
+    <%= f.label :Description %><br>
+    <%= f.text_field :description %>
+    </div>
+ <div class
+ <div class="form-group">
+    <%= f.label :Interest %><br>
+ 
+  <%= select_tag 'club[interest_id]', options_for_select(Interest.all.collect{ |u| [u[:title], u.id] }, @club[:interest_id]), include_blank: 'Select' %>
+
+   
+    </div>
+  <div class="form-group">
+    <%= f.label :Active %><br>
+    <%= f.check_box :status %>
+    </div>
+ <div class="form-group">
+  <%= f.label :image %><br>
+     <%= f.file_field :club_pic  %>
+ </div>
+  <div class="form-group">
+    <%= f.submit "Create", class:"btn btn-default" %>
+    </div>
+<% end %>

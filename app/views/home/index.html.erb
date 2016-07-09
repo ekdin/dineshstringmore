@@ -1,0 +1,64 @@
+        <div id="top-banner-space" class="trending-clubs-box">
+            <div class="banner-heading-holder">
+                <h3 class="banner-header-text-style">Join clubs to share, learn, explore and do more among like minded people</h3></div>
+            <div class="div-banner-sub-header">
+                <h5 class="banner-subheading-text-style">Trending clubs</h5></div>
+            <div class="div-club-pin-holder">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 nopadding"></div>
+                <% @clubs.each do |club|  %>
+                    <%= link_to ("/clubs/#{club.id}/#{club.name.parameterize}") do %>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 nopadding">
+                        <div class="club-pin">
+                        <%=image_tag club.club_pic.url, class:'club-image' %>   
+                            <h4 class="text-center club-name-text-style"><%=club.name %></h4></div>
+                        <% end %>    
+                    </div>
+                <% end %>
+                
+               </div>
+            </div>
+        <div class="post-question-row">
+        
+            <div class="col-lg-6 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 nopadding">
+                
+                 <div id="div-post-box-club-page" class="div-post-box-club-page">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
+                                <div id="main" class="div-main">
+                                    <div id="tab-change" class="div-tab">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding" id="col-question">
+                                            <div id="div-tab-question" class="div-tab-question">
+                                                <h3 class="text-center tab-text-style">Post a Question</h3></div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding" id="col-post">
+                                            <div id="tab-post" class="div-tab-post">
+                                                <h3 class="text-center tab-text-style">Post a Story</h3></div>
+                                        </div>
+                                    </div>
+                                         <%=render partial: 'shared/post_question' %>
+                                          <%=render partial: 'shared/post_story', :locals=>{:storyclass=>'inactive'} %>
+                                   </div>
+                                </div>
+
+
+                        </div>
+
+
+
+            </div>
+          
+        </div>
+        
+        <div id="feed" class="feed-section">
+            <div class="col-lg-3 col-md-3 col-sm-1 hidden-xs">
+
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
+
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-1 hidden-xs">
+
+            </div>
+
+
+        </div>

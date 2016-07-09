@@ -1,0 +1,19 @@
+<div class="div-club-question">
+
+<%=form_for :club_question, url: club_questions_path, html:{method: :post} , :remote=>true  do |f| %>
+
+	<%= f.text_area  :content, cols: 80, rows: 10 %>
+	 <%= f.file_field :question_pic %>
+	<%= hidden_field_tag 'club_question[club_id]', params[:id] %>
+
+    <%= f.submit "Post", class:"btn btn-default" %>
+<% end %>
+</div>
+<style type="text/css">
+	.div-club-question
+	{
+		margin-top: 130px;
+		    text-align: center;
+	}
+
+</style>

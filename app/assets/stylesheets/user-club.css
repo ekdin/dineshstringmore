@@ -1,0 +1,115 @@
+div#club-page-banner.club-page-banner{
+  height:329px;
+  background-color:yellow;
+  padding-left:1%;
+  padding-right:1%;
+}
+
+div#div-club-image.div-club-image{
+  height:135px;
+  background-color:yellow;
+}
+
+div#div-club-details.div-club-details{
+  height:40px;
+  background-color:yellow;
+}
+
+div#div-club-bio.div-club-bio{
+  height:40px;
+  margin-top:-17px;
+}
+
+div#div-club-image-space.div-club-image-space{
+  height:152px;
+  background-color:rgb(255,255,0);
+}
+
+img.img-circle.img-responsive.club-image-club-page{
+  margin-top:20px;
+  text-align:center;
+  margin-left:11%;
+  float:center;
+}
+
+div.club-name-space{
+  width:100%;
+  margin-top:10px;
+  text-align:center;
+}
+
+span.text-primary.club-name-style-club-page{
+  font-size:16px;
+  text-align:center;
+}
+
+div#club-image-holder.club-image-holder{
+}
+
+p.club-bio-style-club-page{
+  text-align:center;
+  font-size:18px;
+  font-weight:500;
+  color:black;
+}
+
+div#join-club-space.join-club-space{
+  text-align:center;
+  margin-top:15px;
+}
+
+button.btn.btn-warning{
+  margin-top:5px;
+}
+
+div#div-post-box-club-page.div-post-box-club-page{
+
+  border:1px solid grey;
+  border-radius:5px;
+  margin-top:20px;
+}
+
+div#div-feed-block-club-page.div-feed-block-club-page{
+  margin-top:10px;
+  height:300px;
+  border:1px solid grey;
+  border-radius:5px;
+}
+
+div#div-user-stats-panel.div-user-stats-panel{
+  margin-top:12px;
+  border:1px solid grey;
+}
+
+div#div-club-stats-panel.div-club-stats-panel{
+  overflow:hidden;
+  margin-top:21px;
+}
+
+div#club-stats-panel.col-lg-3.col-md-3.col-sm-3.col-xs-12.nopadding{
+  border:0;
+}
+
+div#questions.div-club-questions{
+  overflow:hidden;
+}
+
+div#members.div-club-members{
+  overflow:hidden;
+}
+
+div#post.div-club-post{
+  overflow:hidden;
+}
+
+div#stat-name.div-stat-name{
+  color:#ff0093;
+}
+
+h4.stat-name-style{
+}
+.user-club-main-div
+{
+      margin-top: 91px;
+}
+

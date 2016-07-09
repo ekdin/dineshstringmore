@@ -1,0 +1,34 @@
+.active
+{
+  display: block !important;
+}
+.div-post-story
+{
+  display: none;
+}
+.div-question-block 
+{
+   display: none;
+}
+.div-one-commnet-section-main
+{
+      overflow: hidden;
+}
+.div-club-questions.active
+{
+   border: 2px solid grey;
+    background-color: rgba(17, 117, 17, 0.28);
+}
+.div-club-post.active
+{
+     border: 2px solid grey;
+    background-color: rgba(17, 117, 17, 0.28);
+}
+.view-more
+{
+	display: none;
+}
+.section-admin
+{
+	margin-top: 6%;
+}

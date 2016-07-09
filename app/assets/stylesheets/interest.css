@@ -1,0 +1,66 @@
+  div#heading-title.div-heading-title-choose-interest-page{
+}
+
+h1.heading-title-style{
+  font-family:'Merriweather';
+}
+
+h2.heading-title-style{
+  font-family:'Merriweather';
+}
+
+h3#sub-heading.text-center.sub-heading-style{
+  font-family:'Merriweather';
+  color:grey;
+  font-size:medium;
+}
+
+div#heading-title.div-heading-title-choose-interest-page{
+  margin-top:80px;
+}
+
+div#div-image-block.image-block{
+}
+
+div#main.div-main{
+  margin-top:20px;
+}
+
+img#interest-image.interest-image{
+}
+div#div-image-block.image-block {
+    border: 1px solid;
+}
+.fa-check
+{
+    right: 15px;
+    position: absolute;
+    display: none;
+}
+.fa-check.active
+{
+	color: green;
+	display: block;
+}
+.inactive
+{
+	display: none;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.btn-follow-interest
+{
+	    float: right;
+    margin-top: 15px;
+}
+

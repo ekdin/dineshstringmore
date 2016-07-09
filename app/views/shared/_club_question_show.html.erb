@@ -1,0 +1,6 @@
+<% @clubfeed[:questions].each do |question| %>
+
+
+    <%= render partial: 'shared/posted_question_block', :locals=>{:question=>question} %>
+
+ <% end %>

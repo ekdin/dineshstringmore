@@ -1,0 +1,100 @@
+
+        
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xs-offset-0" id="post-panel">
+			<%=form_for @story, url: club_stories_path, html:{method: :post} , :remote=>true  do |f| %>
+                <div id="div-title" class="div-title">
+
+					<%= f.text_field :title, class: 'input-lg post-title',placeholder:'Compose a post now' %>
+                   
+                </div>
+
+				<%= f.fields_for :contents do |cf| %>
+
+					<div class="div-image-tag" ></div>
+	
+				<% end %>
+				<%= hidden_field_tag 'story[club_id]', params[:id] %>
+
+                <div id="div-add-elements" class="div-add-elements">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-2 hidden-xs hidden-sm hidden-md hidden-lg" id="first"></div>
+                    <div class="col-lg-6 col-md-6 col-md-offset-3 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2" id="mid">
+                        <div id="div-add-element" class="div-add-element">
+                            <div class="row">
+                               <a href="javascript:void(0);" onclick="fnimageClick();"> <div class="col-lg-2 col-lg-offset-4 col-md-2 col-md-offset-3 col-sm-2 col-sm-offset-3 col-xs-2 col-xs-offset-3 nopadding" id="image-tab"><i class="glyphicon glyphicon-picture icon-compose-page"></i></div></a>
+
+
+                              <a href="javascript:void(0);" onclick="fnTextClick();">  <div class="col-lg-2 col-lg-offset-0 col-md-3 col-sm-2 col-xs-2 col-xs-offset-1 nopadding" id="text-tab"><i class="glyphicon glyphicon-font icon-compose-page"></i></div></a>
+
+                                  <%= f.submit "Post", class:"btn btn-default" %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-2 hidden-xs hidden-sm hidden-md hidden-lg" id="last"></div>
+                </div>
+
+			<% end %>
+
+            </div>
+          
+       
+
+<script type="text/javascript">
+
+var divclass="";
+var divfileid="";
+function fnimageClick()
+{
+
+ 	var contentpos=$('.div-stroy').length;
+	var position=$('.div-stroy').length+1;
+		var htmldiv="<div class='div-stroy div-stroy-block-"+position+"'><i onclick='fnremove(this);' class='glyphicon glyphicon-remove icon-post-remove' ></i><input type='file' id='story_contents_attributes_"+contentpos+"_content_pic' class='file-story file-story-with-"+position+"' style='display:none' name='story[contents_attributes]["+contentpos+"][content_pic]'  /><input type='hidden' value='"+position+"'  class='story-hidden-field' name='story[contents_attributes]["+contentpos+"][position]' id='story_contents_attributes_"+contentpos+"_position' > <input type='hidden' value='image'  class='story-hidden-content-type' name='story[contents_attributes]["+contentpos+"][content_type]' id='story_contents_attributes_"+contentpos+"_content_type' > </div>";
+	      $(htmldiv).appendTo('.div-image-tag');
+	      divclass=".div-stroy-block-"+position;
+	      divfileid="story_contents_attributes_"+contentpos+"_content_pic";
+	      $('#'+divfileid).click();
+		  charge();
+}
+
+function charge()
+{
+    document.body.onfocus = roar;
+    
+}
+    
+function roar()
+{
+	var godzilla = document.getElementById(divfileid)
+    if(godzilla.value.length>0) 
+	{
+
+	}
+    else
+    {	
+      $(divclass).remove();	
+   	  document.body.onfocus = null;
+    } 
+}
+ $('body').on('change', '.file-story', function(){
+     var reader = new FileReader();
+      reader.onload = function (e) {
+      $("<img />", {
+                    "src": e.target.result,
+                    "class": "thumb-image"
+                }).appendTo(divclass);
+ 
+       }
+      reader.readAsDataURL($(this)[0].files[0]);
+            
+  });
+ function fnTextClick()
+ { 
+ 	var contentpos=$('.div-stroy').length;
+ 	var position=$('.div-stroy').length+1;
+	var htmldiv="<div class='div-stroy div-stroy-block-"+position+"'><i onclick='fnremove(this);' class='glyphicon glyphicon-remove icon-post-remove'></i><textarea id='story_contents_attributes_"+contentpos+"_content' class='text-story-with-"+position+"' name='story[contents_attributes]["+contentpos+"][content]' ></textarea><input type='hidden' value='"+position+"'  class='story-hidden-field' name='story[contents_attributes]["+contentpos+"][position]' id='story_contents_attributes_"+contentpos+"_position' > <input type='hidden' value='text'  class='story-hidden-content-type' name='story[contents_attributes]["+contentpos+"][content_type]' id='story_contents_attributes_"+contentpos+"_content_type' >  </div>";
+	      $(htmldiv).appendTo('.div-image-tag');
+ }
+function fnremove(id)
+{
+	$(id).closest('.div-stroy').remove();
+}
+</script>

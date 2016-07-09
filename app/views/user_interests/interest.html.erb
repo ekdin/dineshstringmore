@@ -1,0 +1,38 @@
+   <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="heading-title" class="div-heading-title-choose-interest-page">
+                    <h2 class="text-center heading-title-style">Choose atleast 3 interests, so that we can build a customized feed with clubs based on the chosen interest.</h2>
+                    <h3 class="text-center sub-heading-style" id="sub-heading">You can always add or remove any interest later</h3></div>
+                <div id="interest-list-section" class="div-interest-list-section">
+                    <div class="row">
+                        <% @interests.each do |interest| %>
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6" id="image-block">
+                            <div id="main" class="div-main">
+                                <div id="div-image-block" class="image-block">
+                                   <i class="fa fa-2x fa-check" ></i>
+                                    <%= image_tag interest.interest_pic.url,class:"img-rounded interest-image",width: '140px',alt: interest.title %>
+                                     <%= hidden_field_tag 'interest_id', interest.id, class: 'interest_class' %>
+                                </div>
+                            </div>
+                        </div>
+                        <% end %>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</div>
+<footer class="footer">
+      <div class="container">
+        <input type="button" class="btn btn-info btn-follow-interest inactive" value="follow Interest"></input>
+
+      </div>
+</footer>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'interest' %>
+  <%= javascript_include_tag 'interest' %>
+<% end %>     

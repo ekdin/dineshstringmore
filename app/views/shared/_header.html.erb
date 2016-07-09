@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid ">
+   <div class="col-lg-4">
+   <div class="navbar-header">
+   	 
+   	  		<%=image_tag 'logo-icon.png', alt: 'stringmore.com', width: '49px'  %>
+
+   	 
+   	  
+   </div>
+    </div>
+   	 
+    <div class="col-lg-4">
+
+
+   	  </div>
+   <div class="col-lg-4">
+   		 <div>	
+    	 	<input type="search" />
+    	 	 <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 
+    	 
+    	 </div>		
+		  <div id="user_nav">
+
+		    <% if current_user %>
+            Logged in as <%= current_user.email %>.
+            <%= link_to "Log out", destroy_user_session_path,:method => :delete  %>
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path %> or
+            <%= link_to "log in", new_user_session_path %>
+          <% end %>
+          <% flash.each do |name, msg| %>
+              <%= content_tag :div, msg, :id => "flash_#{name}" %>
+            <% end %>
+		</div>
+	</div>
+  </div>
+</nav>

@@ -1,0 +1,66 @@
+/* cyrillic-ext */
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Merriweather'), local('Merriweather-Regular'), url(/fonts/Merriweather.woff2) format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Merriweather'), local('Merriweather-Regular'), url(/fonts/Merriweathersecond.woff2) format('woff2');
+
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Merriweather'), local('Merriweather-Regular'), url(/fonts/Merriweatherthird.woff2) format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Merriweather'), local('Merriweather-Regular'), url(/fonts/Merriweatherfourth.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'yarsa';
+  font-style: normal;
+  
+  src: local('yarsa'), 
+  local('yarsa-Regular'), 
+  url(/fonts/yarsa-300.ttf)
+   format('ttf');
+}
+@font-face {
+  font-family: 'yarsa';
+  font-style: normal;
+  
+  src: local('yarsa'), 
+  local('yarsa-Regular'), 
+  url(/fonts/yarsa-500.ttf)
+   format('ttf');
+}
+@font-face {
+  font-family: 'yarsa';
+  font-style: normal;
+  
+  src: local('yarsa'), 
+  local('yarsa-Regular'), 
+  url(/fonts/yarsa-700.ttf)
+   format('ttf');
+}
+@font-face {
+  font-family: 'yarsa';
+  font-style: normal;
+  
+  src: local('yarsa'), 
+  local('yarsa-Regular'), 
+  url(/fonts/yarsa-regular.ttf)
+   format('ttf');
+}

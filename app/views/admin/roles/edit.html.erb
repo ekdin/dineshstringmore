@@ -1,0 +1,10 @@
+<%=form_for :role, url: admin_role_url(params[:id]), html:{method: :patch} do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class:"form-control"  %>
+    </div>
+  <div class="form-group">
+    <%= f.submit "Update Role", class:"btn btn-default" %>
+    </div>
+<% end %>

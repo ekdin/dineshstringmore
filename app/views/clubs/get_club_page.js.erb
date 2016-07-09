@@ -1,0 +1,22 @@
+// Append new data
+<% if @pageid=='1' %>
+
+$(".infinite-club-story").html('');
+<% end %>
+$("<%= j(render partial: 'club_show') %>").appendTo($(".infinite-club-story"));
+
+<% if @clubfeed[:stories].count>0 && @clubfeed[:questions].count>0 %>
+ 	
+ 	diaryurl='<%= @url %>'
+
+  $('.view-more a').attr('href', diaryurl);
+
+  <% else %>
+  	$('.view-more a').hide();
+
+<% end %>  
+
+
+
+$('#club-feed-heading').html('Club Feed');
+

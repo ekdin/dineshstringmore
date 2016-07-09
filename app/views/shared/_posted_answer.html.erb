@@ -1,0 +1,20 @@
+<div id="comment-posted" class="div-comment-posted">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 nopadding" id="user-pic">
+                                    <img class="img-circle user-pic" src="<%= answer.user.user_profile_pic %>" width="35px" id="user-pic-holder">
+                                    </div>
+                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10 nopadding" id="text-input-col">
+                                        <div class="comment-post-holder">
+                                            <p class="comment-posted-text-style"> <%=  %>
+                                            <%= auto_link(answer.answer, :html => {:target => '_blank'}).html_safe   %>
+
+
+                                            </p>
+                                            <% if answer.answer_pic.present? %>
+
+                                            	<%= image_tag answer.answer_pic, width: '200px;' %>
+
+                                            <% end %>
+                                        </div>
+                                        
+                                    </div>
+                                </div>

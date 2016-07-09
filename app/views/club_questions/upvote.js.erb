@@ -1,0 +1,1 @@
+$('.div-question-vote-<%= @question.id %>').html("<%= j(render partial: 'shared/question_upvote',:locals=>{:question=>@question}) %> ")

@@ -1,0 +1,179 @@
+div#div-title.div-title{
+  height:100px;
+}
+
+input#post-title.post-title{
+  width:100%;
+  margin-top:66px;
+  height:50px;
+}
+
+input#post-title.input-lg.post-title{
+  outline:none;
+  border-top:0;
+  border-left:0;
+  border-right:0;
+  border-bottom:1px solid grey;
+  padding-top:5px;
+  padding-bottom:0px !important;
+  border-radius:0px;
+}
+
+div#div-add-elements.div-add-elements{
+  height:45px;
+  margin-top:26px;
+}
+
+div#add-image.add-image-tab{
+  border:1px solid grey;
+  height:30px;
+}
+
+h3.add-image-text-style{
+  padding-top:1px;
+  paddin-bottom:2px;
+  padding-bottom:2px;
+}
+
+button#add-image-btn.btn.btn-default.add-image-btn{
+  display:inline;
+  margin-left:-25px;
+}
+
+button#add-text-btn.btn.btn-default.add-text-btn{
+  display:inline;
+  border-radius:6px;
+  background:#e04251;
+  color:white;
+  font-family:'Merriweather';
+}
+
+div#image-tab.col-md-12.col-sm-6.col-xs-6.nopadding{
+  padding-left:1px;
+  padding-right:1px;
+}
+
+div#text-tab.col-md-12.col-sm-6.col-xs-6.nopadding{
+  padding-left:1px;
+  padding-right:1px;
+}
+
+button#add-image-btn.btn.btn-default.add-text-btn{
+  background:#e04251;
+  color:white;
+  font-family:'Merriweather';
+  font-weight:300 !important;
+}
+
+div#content-box.div-content-box{
+  font-family:'Merriweather';
+}
+
+i.glyphicon.glyphicon-picture.icon-compose-page{
+  font-size:23px;
+  color:#004454;
+}
+
+i.glyphicon.glyphicon-font.icon-compose-page{
+  font-size:22px;
+  color:#004454;
+}
+
+
+
+/*  question block */
+
+
+div#main.div-main{
+ 
+  margin-top:15px;
+}
+
+div#div-tab-question.div-tab-question{
+  height:35px;
+  background-color:feb449;
+  background-color:#FEB449;
+}
+
+div#tab-post.div-tab-post{
+  height:35px;
+  background-color:#FEB449;
+  border-left:2px solid white;
+}
+
+h1.tab-text-style{
+  margin-top:2px;
+}
+
+h3.tab-text-style{
+  margin-top:0px;
+  padding-bottom:5px;
+  padding-top:6px;
+  color:white;
+  font-family:'Merriweather';
+  font-size:18px;
+}
+
+div#tab-post.div-tab-question{
+  background-color:yellow;
+}
+
+div.col-lg-8.col-md-8.col-sm-12.col-xs-12.nopadding{
+  padding-left:1px;
+  padding-right:1px;
+}
+
+div#col-post.col-lg-6.col-md-6.col-sm-6.col-xs-6.nopadding{
+  padding-left:0px;
+  padding-right:0px;
+}
+
+div#col-question.col-lg-6.col-md-6.col-sm-6.col-xs-6.nopadding{
+  padding-left:0px;
+  padding-right:0px;
+}
+
+div#text-box.div-text-box{
+  height:100px;
+}
+
+div#tab-change.div-tab{
+  height:40px;
+}
+
+input.input-lg.text-input-box-style{
+  width:100%;
+  height:80px;
+  border-top:0;
+  border-left:0;
+  border-right:0;
+}
+
+div#col-image-icon.col-lg-2.col-md-2.col-sm-2.col-xs-2.nopadding{
+  padding-left:1px;
+  padding-right:1px;
+}
+
+i#camera-icon.glyphicon.glyphicon-star.camera-icon{
+  float:right;
+  font-size:20px;
+}
+
+i#camera-icon.glyphicon.glyphicon-camera.camera-icon{
+  font-size:27px;
+  float:right;
+  color:#f47c00;
+  margin-top:5px;
+}
+
+button#sign-up-now-btn.btn.btn-default.sign-up-now-btn{
+  border-radius:5px;
+  flaot:right;
+}
+
+div#join-the-club-btn.div-sign-up-now{
+  float:right;
+  margin-top:0px;
+}
+
+

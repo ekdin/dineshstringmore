@@ -1,0 +1,21 @@
+<% if @pageid=='1' %>
+
+$(".infinite-club-story").html('');
+<% end %>
+$("<%= j(render partial: 'shared/club_member') %>").appendTo($(".infinite-club-story"));
+
+<% if @clubfeed[:members].count>0 %>
+ 	
+ 	diaryurl='<%= @url %>'
+
+  $('.view-more a').attr('href', diaryurl);
+
+  <% else %>
+  	$('.view-more a').hide();
+
+<% end %>  
+
+
+
+$('#club-feed-heading').html('Members');
+

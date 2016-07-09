@@ -1,0 +1,46 @@
+
+$(".story-rate-block-<%= @id %>").html("<%= j(render partial: 'shared/story_rating', :locals=>{:story=>@story}) %>");
+
+$('.story-star').hover(
+    // Handles the mouseover
+    function() {
+        $(this).prevAll().andSelf().addClass('glyphicon-star');
+        $(this).prevAll().andSelf().removeClass('glyphicon-star-empty'); 
+    },
+    // Handles the mouseout
+    function() {
+        $(this).prevAll().andSelf().addClass('glyphicon-star-empty');
+
+        $(this).prevAll().andSelf().removeClass('glyphicon-star');
+        $(this).closest('.div-rate-main').find('.rate-active').addClass('glyphicon-star').removeClass('glyphicon-star-empty');
+        
+    }
+);
+$('.story-star').click(function(){
+	var sid=$(this).closest('.div-rate-main').find('#sid').val();
+	var scid=$(this).closest('.div-rate-main').find('#rcid').val();
+	var rate=$(this).attr('value');
+
+	var story_rating={story_id:sid,rate_category_id: scid,rate: rate}
+	var json = JSON.stringify(story_rating ); 
+	console.log(story_rating);
+			$.ajax({
+			 type: "patch",
+			 url: "/story_ratings/rate",
+			 data: story_rating,
+			 dataType: 'script',
+			 success: function(msg) {
+				 
+			 },
+			 error: function(msg)
+			 {
+			 	console.log("error comes")
+			 	console.log(msg);
+
+			 }
+		});
+
+});
+
+
+

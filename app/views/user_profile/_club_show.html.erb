@@ -1,0 +1,13 @@
+<% @clubfeed[:stories].each do |story| %>
+	
+    <%= render partial: 'shared/posted_story_block', :locals=>{:story=>story} %>
+
+ <% end %>               
+
+
+ <% @clubfeed[:questions].each do |question| %>
+
+
+    <%= render partial: 'shared/posted_question_block', :locals=>{:question=>question} %>
+
+ <% end %>

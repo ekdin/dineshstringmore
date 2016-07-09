@@ -1,0 +1,46 @@
+div#main.div-main-club-pin{
+  height:367px;
+  border:1px solod grey;
+  border:1px solid grey;
+  margin-top:10px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+}
+
+img#club-image-style.img-circle.club-image-style{
+  margin-top:42px;
+  margin-left:0%;
+}
+
+div#club-name.div-club-name{
+  height:50px;
+}
+
+h2#club-name-style.text-center.club-name-style{
+  font-family:'Merriweather';
+}
+
+h4.text-center.club-ineterest-name-style{
+  color:#00c6b2;
+  font-family:'Merriweather';
+}
+
+div#join-club-section.join-club-section{
+  height:50px;
+  border-left:1px solid grey;
+  border-right:1px solid grey;
+  border-bottom:1px solid grey;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  background-color:#d36d00;
+  border-right:1ps solid grey;
+}
+
+h3#join-club-text-style.text-center.join-club-text-style{
+  paddin-top:2px;
+  margin-top:0px;
+  padding-top:11px;
+  color:white;
+  font-family:'Merriweather';
+}
+

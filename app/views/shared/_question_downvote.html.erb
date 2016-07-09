@@ -1,0 +1,4 @@
+ <%= link_to dislike_club_question_path(question), method: :put do %>
+                                                          Downvote
+                                                          <%= question.get_downvotes.size %>
+                                                 <% end %>

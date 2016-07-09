@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stringmore</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render partial: 'shared/header' %>
+<section class="section-admin">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-3 div-admin-sidebar" id="leftCol">
+              
+              	<ul class="nav nav-stacked" id="sidebar">
+                  <li><a href="<%= admin_clubs_url %>">Clubs</a></li>
+                  <li><a href="<%= admin_interests_url %>">Inerests</a></li>
+                  <li><a href="<%= admin_roles_url %>">Roles</a></li>
+                  <li><a href="#sec3">User Roles</a></li>
+                  <li><a href="<%=admin_rating_categories_url%>">Rating Categories</a></li>
+              	</ul>
+              
+</div>
+<div class="col-md-6">
+	
+	<%= yield %>
+</div>
+<div  class="col-md-3" >
+	
+</div>
+</div>
+</div>
+</section>
+	
+	
+
+</body>
+</html>
+

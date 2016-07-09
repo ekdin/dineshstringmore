@@ -1,0 +1,4 @@
+
+$("<%= j(render partial: 'shared/posted_story_comment', :locals=>{:comment=>@comment}) %>").prependTo($(".div-story-comment-<%=@qid %>"));
+$(".div-story-comment-<%=@qid %>").find('.text-area-comment').val('');
+$(".div-story-comment-<%=@qid %>").find('.file-comment-field').val('');

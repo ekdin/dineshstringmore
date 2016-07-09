@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+
+ <% if current_user.userclubs.where(:club_id=>club.id).count==0 %>
+                             <%=link_to user_clubs_path+"?club_id=#{club.id}" ,:method => "post",:class=>'join-button btn btn-warning btn-lg',:remote=>true do %>    
+                                    Join
+ 	 							<% end %>      
+ <% else %>
+                                
+                                 <%=link_to user_club_path(club.id) ,:method => "delete",:class=>'join-button btn btn-warning btn-lg',:remote=>true do %>    
+                                    unjoin
+ 								<% end %>   
+                        
+<% end %>
+
+<% else %>
+
+
+<% end %>

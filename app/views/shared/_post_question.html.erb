@@ -1,0 +1,33 @@
+    <div class="div-question-block active">
+                        <%=form_for :club_question, url: club_questions_path, html:{method: :post} , :remote=>true  do |f| %>
+                        <div id="text-box" class="div-text-box">
+                             <%= f.text_area  :content, cols: 80, rows: 3, class: 'input-lg text-input-box-style', placeholder: 'Go! Ahead  ask a question' %>
+                            
+                        </div>
+                        <div class="div-question-image" ></div>
+                        <div id="activity-block" class="div-activity-block">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-1 col-xs-2 nopadding" id="col-image-icon">
+                                    <%= f.file_field :question_pic, class:'input-file-question-pic hidden' %>
+                                     <i class="glyphicon glyphicon-camera camera-icon qusion-pic-click" id="camera-icon"></i>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-md-offset-8 col-sm-3 col-sm-offset-7 col-xs-4 col-xs-offset-5" id="col-join-section">
+
+                                     <select name="club_question[club_id]">
+                                          <option value="0">select</option>
+                                          <% @clubs.each do |club| %>
+                                              <option value="<%= club.id %>"><%= club[:name] %></option>
+                                          <% end %>
+                                      </select>
+
+                                    <div id="join-the-club-btn" class="div-sign-up-now">
+                                        <%= f.submit "Post", class:"btn btn-default btn-lg sign-up-now-btn" %>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       <% end %>
+</div>
+   
+

@@ -1,0 +1,73 @@
+<div id="div-feed-block-club-page" class="div-feed-block-club-page">
+                            <div class="class-div-main">
+                                <div id="div-main-feed-block" class="div-main-feed-block">
+                                    <div id="div-post-title" class="div-post-title">
+                                       <%= link_to("/club/#{story.club.id}/#{story.club.name.parameterize}/story/#{story.id}/#{story.title.parameterize}") do %> 
+                                        <h2 class="text-warning post-title-style"><%= story.title %></strong></h2>
+
+                                        <% end %>
+
+                                        </div>
+                                    <div id="div-post-details" class="div-post-details">
+                                        <div class="row">
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2" id="user-profile-pic-col">
+                                                <div id="user-profile-pic-feed-block" class="user-profile-pic-feed-block">
+                                                <%=image_tag story.user.user_profile_pic, class: 'img-circle user-profile-image-feed-block', width: '50px', height: '50px' %></div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 nopadding" id="user-details-col">
+                                                <div class="div-user-details-holder">
+                                                <%= link_to("/users/#{story.user.uname}/profile") do %>
+                                                    <h5 id="div-user-name" class="div-user-name"> <%= story.user.name %> @<%= story.user.uname %></h5>
+                                                    <%end%></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% story.contents.each do |content| %>
+                                    <div id="first-content-box" class="first-content-box">
+                                    <% if content.content_type=='text' %>
+                                     <p id="first-content-box-style" class="first-content-box-style"><%= content.content %></p>
+                                     <% elsif content.content_type=='image'  %>
+                                        <div id="first-content-image" class="first-content-image">
+                                        <%=image_tag content.content_pic.url(:normal), class: 'first-content-image-style' %>
+                                        </div>
+
+                                       <% end %> 
+                                    </div>
+                                    <% end %>
+                                </div>
+                                <div id="stats-section" class="div-stats-section ">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-3 col-xs-4 nopadding story-rate-block-<%= story.id  %>" id="rating">
+                                            <%= render partial: 'shared/story_rating',:locals=>{:story=>story} %>
+                                           
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-md-offset-1 col-sm-1 col-xs-2 nopadding" id="comment"><i class="glyphicon glyphicon-align-center comment-icon" id="comment-icon"></i></div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 nopadding" id="save"><i class="glyphicon glyphicon-heart-empty save-icon-style" id="save-icon"></i></div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 nopadding" id="share"><i class="glyphicon glyphicon-new-window share-icon" id="share-icon"></i></div>
+                                        <div class="col-lg-3 col-md-3 col-sm-6 col-sm-offset-0 col-xs-2 nopadding" id="more"><i class="glyphicon glyphicon-option-horizontal more-icon" id="more-icon"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="div-comment-section div-story-comment-<%= story.id %>">
+                                   <% story.storycomments.last(2).reverse.each do |comment| %>
+                                        <%= render partial: 'shared/posted_story_comment', :locals=>{:comment=>comment} %>
+
+                                   <% end %>     
+                               
+                                <div id="one-commnet-section" class="div-one-commnet-section-main">
+                                <%=form_for :story_comment, url: story_comments_path, html:{method: :post} , :remote=>true  do |f| %>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 nopadding" id="text-input-col">
+
+                                        <%= f.text_area  :comment, cols: 80, rows: 2, class:'text-area-comment' %>
+                                         <%=hidden_field_tag 'story_comment[story_id]',story.id %>
+                                        <%= hidden_field_tag 'story_comment[club_id]', params[:id] %>
+                                         <%= f.file_field :comment_pic, class:'hidden file-comment-field' %>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 nopadding" id="comment-btn-col">
+                                    <i class="glyphicon glyphicon-picture" onclick="fncommentclick(this);"></i>
+                                    <%= f.submit "comment", class:"btn btn-primary btn-sm comment-btn" %>
+                                    </div>
+                                <% end %>    
+                                </div>
+                            </div>
+</div>

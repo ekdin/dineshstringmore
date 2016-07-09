@@ -1,0 +1,20 @@
+<div class="div-club-question">
+
+<%=form_for :story_comment, url: story_comments_path, html:{method: :post} , :remote=>true  do |f| %>
+
+	<%= f.text_area  :comment, cols: 80, rows: 10 %>
+	 <%= f.file_field :comment_pic %>
+	 <%=hidden_field_tag 'story_comment[story_id]',params[:sid] %>
+	<%= hidden_field_tag 'story_comment[club_id]', params[:id] %>
+
+    <%= f.submit "Post", class:"btn btn-default" %>
+<% end %>
+</div>
+<style type="text/css">
+	.div-club-question
+	{
+		margin-top: 130px;
+		    text-align: center;
+	}
+
+</style>

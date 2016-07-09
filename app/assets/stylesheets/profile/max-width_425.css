@@ -1,0 +1,140 @@
+@media (max-width:425px){
+
+
+        div#div-cover-photo-user-profile-page.div-cover-photodiv-cover-photo-user-profile-page{
+          height:90px;
+          background-color:yellow;
+        }
+
+        div.container-fluid.conatiner-main{
+          padding-left:2px;
+          padding-right:2px;
+        }
+
+        img#user-profile-pic-user-profile-page.user-profile-pic-user-profile-page{
+          margin-top:-30px;
+          
+          border:4px solid white;
+          
+          width:70px;
+          height: 70px;
+          margin-left:24px;
+        }
+
+        div#div-user-actions-user-profile-page.div-user-actions-user-profile-page{
+          float:right;
+        }
+
+        button#div-user-follow-button-user-profile-page.btn.btn-default.div-user-follow-button-user-profile-page{
+          margin-top:10px;
+
+          font-size:12px;
+        }
+
+        div.row{
+        }
+
+        div#user-bio.row.user-bio{
+        }
+
+        p.user-bio-style{
+          font-family:'Merriwidth';
+          font-size:12px;
+        }
+
+        div#div-user-bio-user-profile-page.div-user-bio-user-profile-page{
+          margin-top:15px;
+          padding-right:30px;
+          padding-left:30px;
+        }
+
+        div#div-user-name-user-profile-page.div-user-name-user-profile-page{
+
+          margin-left:-9px;
+        }
+
+        h5#user-username.user-username{
+          font-size:11px;
+          margin-top:2px;
+          margin-bottom: 2px;
+          margin-left: -18px;
+        }
+
+        h4#user-name.user-name{
+          font-size:12px;
+          margin-top:6px;
+          margin-bottom:2px;
+          margin-left: -18px;
+        }
+
+        div#followers.user-stats-style-user-profile-page{
+        }
+
+        div#div-user-stats-panel.div-user-stats-panel{
+          height:300px;
+          margin-left:25px;
+          margin-right:15px;
+        }
+
+        div#stat-name.div-stat-name{
+        }
+
+        h4.stat-name-style{
+          margin-left:5px;
+          font-size:14px;
+          color:#ed7a9e;
+          margin-top:2px;
+          margin-bottom: 2px;
+        }
+
+        div#div-followers.div-user-stats-user-profile-page{
+          height:24px;
+          border:1px solid rgba(128,128,128,0.2);
+        }
+
+        div#user-stats-panel.col-lg-3.col-md-3.col-sm-4.col-xs-12.nopadding{
+          padding-left:1px;
+          padding-right:1px;
+        }
+
+        div#col-heading.col-lg-8.col-md-8.col-sm-8.col-xs-9.nopadding{
+          padding-left:1px;
+          padding-right:1px;
+        }
+
+        div#user--timeline.col-lg-6.col-md-6.col-sm-8.col-xs-12.nopadding{
+          padding-left:1px;
+          padding-right:1px;
+        }
+
+        div#user-stats-panel.col-lg-3.col-md-3.col-sm-3.col-xs-12.nopadding{
+          padding-left:1px;
+          padding-right:1px;
+        }
+
+        div#col-user-name.col-lg-9.col-md-8.col-sm-8.col-xs-4.nopadding{
+          padding-left:1px;
+          padding-right:1px;
+        }
+
+        div#col-user-profile-pic-user-profile-page.col-lg-2.col-md-2.col-sm-3.col-xs-4.nopadding{
+          padding-left:1px;
+          padding-right:1px;
+        }
+
+        h4#number.div-number{
+          font-size:14px;
+          margin-top:2px;
+          margin-bottom:7px;
+        }
+        
+
+        .nopadding
+
+        {
+
+          padding-left:1px;
+          padding-right:1px;
+        }
+
+}

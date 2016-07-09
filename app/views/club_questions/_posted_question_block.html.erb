@@ -1,0 +1,62 @@
+<div id="div-feed-block-club-page" class="div-feed-block-club-page">
+    <div class="class-div-main">
+        <div id="div-main-feed-block" class="div-main-feed-block">
+                                    <div id="div-post-title" class="div-post-title">
+                                        <h2 class="text-warning post-title-style"><%= question.content %></strong>.</h2></div>
+                                    <div id="div-post-details" class="div-post-details">
+                                        <div class="row">
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2" id="user-profile-pic-col">
+                                                <div id="user-profile-pic-feed-block" class="user-profile-pic-feed-block">
+                                                <%=image_tag question.user.user_profile_pic, class: 'img-circle user-profile-image-feed-block', width: '50px', height: '50px' %></div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 nopadding" id="user-details-col">
+                                                <div class="div-user-details-holder">
+                                                <%= link_to("/users/#{question.user.uname}/profile") do %>
+                                                    <h5 id="div-user-name" class="div-user-name"> <%= question.user.name %> @<%= question.user.uname %></h5>
+                                                    <%end%></div>
+                                                  
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                <div id="stats-section" class="div-stats-section">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-3 col-xs-4 nopadding" id="rating">
+                                            <div id="rate" class="div-rate-main div-question-vote-<%= question.id %>"> 
+                                            
+                                               <%= render partial: 'shared/question_upvote',:locals=>{:question=>question} %>     
+                                           
+                                             </div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-md-offset-1 col-sm-1 col-xs-2 nopadding" id="comment"><i class="glyphicon glyphicon-align-center comment-icon" id="comment-icon"></i></div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 nopadding" id="save"><i class="glyphicon glyphicon-heart-empty save-icon-style" id="save-icon"></i></div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 nopadding" id="share"><i class="glyphicon glyphicon-new-window share-icon" id="share-icon"></i></div>
+                                        <div class="col-lg-3 col-md-3 col-sm-6 col-sm-offset-0 col-xs-2 nopadding" id="more"><i class="glyphicon glyphicon-option-horizontal more-icon" id="more-icon"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="div-comment-section div-answer-section-<%= question.id %>">
+                               
+                                <% question.answers.last(2).reverse.each do |answer| %>
+                                <%= render partial: 'shared/posted_answer', :locals=>{:answer=>answer} %>
+                                <% end %>
+                                <div id="one-commnet-section" class="div-one-commnet-section-main">
+                                <%=form_for :answer, url: answers_path, html:{method: :post} , :remote=>true  do |f| %>
+
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 nopadding" id="text-input-col">
+                                     <%= f.text_area  :answer, cols: 80, rows: 2, class:'text-area-comment' %>
+                                     <%=hidden_field_tag 'answer[club_question_id]',question.id %>
+                                      <%= hidden_field_tag 'answer[club_id]', params[:id] %>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 nopadding div-answer-image" id="comment-btn-col">
+                                        <i class="glyphicon glyphicon-picture" onclick="fnanswerclick(this);"></i>
+                                        <%= f.file_field :answer_pic, class:'hidden file-answer-image' %>
+                                         <%= f.submit "Answer", class:"btn btn-primary btn-sm comment-btn" %>
+                                     
+                                    </div>
+
+                                  <% end %>  
+                                </div>
+                            </div>
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stringmore</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container-fluid div-body">
+<%= render partial: 'shared/user_header' %>
+<div class="row">
+    <div class="col-lg-3 col-md-3 hidden-xs hidden-sm" id="left-panel"></div>
+	
+	<%= yield %>
+	  <div class="col-lg-3 col-md-3 hidden-xs hidden-sm" id="right-panel"></div>
+	</div>
+</div>	
+
+</div>	
+
+</body>
+</html>

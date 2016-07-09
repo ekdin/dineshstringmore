@@ -1,0 +1,54 @@
+ <% @user ||= current_user %>
+ <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 nopadding">
+                <div id="club-page-banner" class="club-page-banner">
+                    <div id="div-club-image-space" class="div-club-image-space">
+                        <div class="col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-3 col-sm-offset-5 col-xs-4 col-xs-offset-4 nopadding" id="col-club-image">
+
+                            <div id="club-image-holder" class="club-image-holder">
+                            <%= link_to("/clubs/#{@club.id}/#{@club.name.parameterize}") do %>
+                            <%= image_tag @club.club_pic.url, class: 'img-circle img-responsive club-image-club-page', width: '100px', height: '100px'  %>
+                            <% end  %>    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="club-name-space">
+                     <%= link_to("/clubs/#{@club.id}/#{@club.name.parameterize}") do %><span class="text-primary club-name-style-club-page"><strong>
+                    <%= @club.name %></strong></span>
+                    <% end %>
+                    </div>
+                    <div id="div-club-details" class="div-club-details"></div>
+                    <div id="div-club-bio" class="div-club-bio">
+                        <p class="club-bio-style-club-page"><%= @club.description %></p>
+                    </div>
+                    <div id="join-club-space" class="join-club-space">
+                         <%= render partial: "shared/join", locals: { club: @club } %>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 nopadding">
+                <div class="div-feed-section">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 nopadding" id="club-stats-panel">
+                        
+                    </div>
+
+                    
+                    <div class="col-lg-6 col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-0 col-xs-12" id="col-stream">
+                      
+                        
+                        <div class="infinite-club-story">
+                         
+                        <%= render partial: 'posted_story_block', :locals=>{:story=>@story} %>
+                         
+                       </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

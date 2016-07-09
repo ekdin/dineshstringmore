@@ -1,0 +1,3 @@
+$("<%= j(render partial: 'shared/posted_answer', :locals=>{:answer=>@answer}) %>").prependTo($(".div-answer-section-<%=@qid %>"));
+$(".div-answer-section-<%=@qid %>").find('#answer_answer').val('');
+$(".div-answer-section-<%=@qid %>").find('#answer_answer_pic').val('');

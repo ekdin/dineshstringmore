@@ -1,0 +1,11 @@
+<%=form_for :rating_category, url: admin_rating_category_url(params[:id]), html:{method: :patch} do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class:"form-control"  %>
+    </div>
+
+  <div class="form-group">
+    <%= f.submit "Update", class:"btn btn-default" %>
+    </div>
+<% end %>

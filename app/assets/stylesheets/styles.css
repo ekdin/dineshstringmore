@@ -1,0 +1,432 @@
+@media (max-width: 425px){
+
+
+      div#top-banner-space.trending-clubs-box{
+       
+        height:309px;
+        background-color:#f77f00;
+      }
+
+      h3.banner-header-text-style{
+        font-family:'Merriweather';
+        font-size:16px;
+        text-align:center;
+        color:white;
+        padding-top:10px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      div.banner-heading-holder{
+        height:40px;
+      }
+
+      h5.banner-subheading-text-style{
+        font-family:'Merriweather';
+        text-align:center;
+        margin-top:20%;
+        color:white;
+      }
+
+      div.div-club-pin-holder{
+        height:150px;
+      }
+
+      div.col-md-12.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-1.col-md-1.col-sm-2.col-xs-2.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-2.col-xs-2.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-4.col-xs-4.nopadding{
+        padding-left:2px;
+        padding-right:2px;
+      }
+
+      div.club-pin{
+        height:120px;
+        text-align:center;
+        padding-top:8px;
+        border:1px solid white;
+        border-radius:7px;
+      }
+
+      h4.text-center.club-name-text-style{
+        font-size:14px;
+        font-family:'Merriweather';
+        color:white;
+      }
+
+      div.col-lg-6.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-3.col-xs-4.xsnopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+      
+      .nopadding
+
+      {
+
+
+        padding-left:1px;
+        padding-right:1px;
+      }
+}
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+@media (min-width: 426px) and (max-width:768px){
+
+
+      div#top-banner-space.trending-clubs-box{
+        
+        height:309px;
+        background-color:#f77f00;
+      }
+
+      h3.banner-header-text-style{
+        font-family:'Merriweather';
+        font-size:16px;
+        text-align:center;
+        color:white;
+        padding-top:10px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      div.banner-heading-holder{
+        height:40px;
+      }
+
+      h5.banner-subheading-text-style{
+        font-family:'Merriweather';
+        text-align:center;
+        margin-top:6%;
+        color:white;
+      }
+
+      div.div-club-pin-holder{
+        height:150px;
+      }
+
+      div.col-md-12.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-1.col-md-1.col-sm-2.col-xs-2.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-2.col-xs-2.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-4.col-xs-4.nopadding{
+        padding-left:2px;
+        padding-right:2px;
+      }
+
+      div.club-pin{
+        height:auto;
+        text-align:center;
+        padding-top:8px;
+        border:1px solid white;
+        border-radius:7px;
+        margin-left:3px;
+        margin-right:3px;
+      }
+
+      h4.text-center.club-name-text-style{
+        font-size:14px;
+        font-family:'Merriweather';
+        color:white;
+      }
+
+      div.col-lg-6.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-3.col-xs-4.xsnopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+      
+      .nopadding
+
+      {
+
+
+        padding-left:2px;
+        padding-right:2px;
+      }
+
+      .club-image
+
+      {
+
+        width:100px !important;
+        height:100px !important;
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+@media (min-width: 769px) and (max-width:1200px){
+
+
+      div#top-banner-space.trending-clubs-box{
+       
+        height:309px;
+        background-color:#f77f00;
+      }
+
+      h3.banner-header-text-style{
+        font-family:'Merriweather';
+        font-size:18px;
+        text-align:center;
+        color:white;
+        padding-top:25px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      div.banner-heading-holder{
+        height:40px;
+      }
+
+      h5.banner-subheading-text-style{
+        font-family:'Merriweather';
+        text-align:center;
+        margin-top:6%;
+        color:white;
+      }
+
+      div.div-club-pin-holder{
+        height:150px;
+      }
+
+      div.col-md-12.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-1.col-md-1.col-sm-2.col-xs-2.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-2.col-xs-2.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-4.col-xs-4.nopadding{
+        padding-left:2px;
+        padding-right:2px;
+      }
+
+      div.club-pin{
+        height:auto;
+        text-align:center;
+        padding-top:8px;
+        border:1px solid white;
+        border-radius:7px;
+        margin-left:3px;
+        margin-right:3px;
+      }
+
+      h4.text-center.club-name-text-style{
+        font-size:14px;
+        font-family:'Merriweather';
+        color:white;
+      }
+
+      div.col-lg-6.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-3.col-xs-4.xsnopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+      
+      .nopadding
+
+      {
+
+
+        padding-left:2px;
+        padding-right:2px;
+      }
+
+      .club-image
+
+      {
+
+        width:100px !important;
+        height:100px !important;
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+@media (min-width: 1200px){
+
+
+      div#top-banner-space.trending-clubs-box{
+       
+        height:309px;
+        background-color:#f77f00;
+      }
+
+      h3.banner-header-text-style{
+        font-family:'Merriweather';
+        font-size:19px;
+        text-align:center;
+        color:white;
+        padding-top:30px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      div.banner-heading-holder{
+        height:40px;
+      }
+
+      h5.banner-subheading-text-style{
+        font-family:'Merriweather';
+        text-align:center;
+        margin-top:6%;
+        color:white;
+      }
+
+      div.div-club-pin-holder{
+        height:150px;
+      }
+
+      div.col-md-12.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-1.col-md-1.col-sm-2.col-xs-2.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-2.col-xs-2.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-4.col-xs-4.nopadding{
+        padding-left:2px;
+        padding-right:2px;
+      }
+
+      div.club-pin{
+        height:auto;
+        text-align:center;
+        padding-top:8px;
+        border:1px solid white;
+        border-radius:7px;
+        margin-left:3px;
+        margin-right:3px;
+      }
+
+      h4.text-center.club-name-text-style{
+        font-size:14px;
+        font-family:'Merriweather';
+        color:white;
+      }
+
+      div.col-lg-6.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12.nopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+
+      div.col-lg-3.col-md-3.col-sm-3.col-xs-4.xsnopadding{
+        padding-left:1px;
+        padding-right:1px;
+      }
+      
+      .nopadding
+
+      {
+
+
+        padding-left:2px;
+        padding-right:2px;
+      }
+
+      .club-image
+
+      {
+
+        width:120px !important;
+        height:120px !important;
+      }
+}
